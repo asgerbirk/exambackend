@@ -1,5 +1,7 @@
 package com.example.exambackend.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -21,14 +23,15 @@ public class Delivery {
 
     private LocalDate deliveryDate;
 
-    private LocalDate fromWareHouse;
+    private String fromWareHouse;
 
     private String destination;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "delivery", cascade = CascadeType.ALL)
     private List<ProductOrder> productOrderList;
 
-    public Delivery(LocalDate deliveryDate, LocalDate fromWareHouse, String destination) {
+    public Delivery(LocalDate deliveryDate, String fromWareHouse, String destination) {
         this.deliveryDate = deliveryDate;
         this.fromWareHouse = fromWareHouse;
         this.destination = destination;
