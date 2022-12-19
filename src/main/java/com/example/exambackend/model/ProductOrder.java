@@ -21,9 +21,11 @@ public class ProductOrder {
     private int quantity;
 
     @ManyToOne
+    @JoinColumn(name = "delivery_id")
     private Delivery delivery;
 
     @ManyToOne
+    @JoinColumn(name = "product_id")
     private Product product;
 
     public ProductOrder(int quantity, Delivery delivery, Product product) {

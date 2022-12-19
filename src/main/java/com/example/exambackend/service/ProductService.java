@@ -38,6 +38,9 @@ public class ProductService {
         return productMapper.productToDto(product);
     }
 
+
+
+
     public ProductDto findByName(String name){
         Product product = productRepository.findByName(name);
         return productMapper.productToDto(product);

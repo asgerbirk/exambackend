@@ -52,8 +52,8 @@ public class ExambackendApplication {
             deliveryRepository.saveAll(deliveries);
 
             productOrderList.add(new ProductOrder(5, deliveries.get(0),products.get(4)));
-            productOrderList.add(new ProductOrder(5, deliveries.get(1),products.get(2)));
-            productOrderList.add(new ProductOrder(5, deliveries.get(2),products.get(0)));
+            productOrderList.add(new ProductOrder(10, deliveries.get(1),products.get(2)));
+            productOrderList.add(new ProductOrder(20, deliveries.get(2),products.get(0)));
             productOrderRepository.saveAll(productOrderList);
 
         });
