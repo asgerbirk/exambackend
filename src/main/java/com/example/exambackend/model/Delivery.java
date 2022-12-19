@@ -27,13 +27,20 @@ public class Delivery {
 
     private String destination;
 
+    @ManyToOne
+    @JoinColumn(name = "van_id")
+    private Van van;
+
     @JsonIgnore
     @OneToMany(mappedBy = "delivery", cascade = CascadeType.ALL)
     private List<ProductOrder> productOrderList;
 
-    public Delivery(LocalDate deliveryDate, String fromWareHouse, String destination) {
+    public Delivery(LocalDate deliveryDate, String fromWareHouse, String destination, Van van) {
         this.deliveryDate = deliveryDate;
         this.fromWareHouse = fromWareHouse;
         this.destination = destination;
+        this.van = van;
     }
+
+
 }

@@ -1,15 +1,13 @@
 package com.example.exambackend.dto;
 
 import com.example.exambackend.model.ProductOrder;
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.example.exambackend.model.Van;
+
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.CascadeType;
-import javax.persistence.OneToMany;
+
 import java.time.LocalDate;
 import java.util.List;
 
@@ -25,6 +23,8 @@ public class DeliveryDto {
     private String fromWareHouse;
 
     private String destination;
+
+    private Van van;
 
     private List<ProductOrder> productOrderList;
 }

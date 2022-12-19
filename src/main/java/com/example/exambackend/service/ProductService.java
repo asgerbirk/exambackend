@@ -38,6 +38,15 @@ public class ProductService {
         return productMapper.productToDto(product);
     }
 
+    public int priceAndWeight(int price){
+        List<ProductDto> list = getAllProducts();
+
+        for (ProductDto productDto :list ) {
+            price += productDto.getPrice();
+        }
+        return price;
+    }
+
 
 
 
